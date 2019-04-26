@@ -1,6 +1,6 @@
 'use strict'
-
-if (!process.versions || !process.versions.node || parseInt(process.versions.node.split('.')[0]) >= 8) {
+var ver;
+if (!process.versions || !process.versions.node || ((ver = parseInt(process.versions.node.split('.')[0])) >= 8 && ver < 12)) {
   try { 
     var flatstr = Function('s', 'return typeof s === "string" ? %FlattenString(s) : s')
   } catch (e) {
